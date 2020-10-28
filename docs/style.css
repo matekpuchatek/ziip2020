@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: lato;
+  color: white;
+  max-width: 2000px;
+  margin-right: auto;
+  margin-left: auto;
+
+  /* zmienne */
+  --zielony: #ffcd19;
+  --niebieski: #05aff2;
+
+  --ciemny-zielony: #b06b00;
+  --ciemny-niebieski: #037aa8;
+  --tlo-kolor: #0b202a;
+  --width--min: 35%;
+  --width-max: 85%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100%;
+  background-image: url(backgournd.jpg);
+}
+
+.logo {
+  background-color: orange;
+  font-size: 50px;
+  padding: 10px;
+  margin: 40px 0 20px 0;
+  color: black;
+  font-weight: bold;
+  box-shadow: 0 0 2px 4px black;
+  border-radius: 5px;
+}
+.logo i {
+  color: white;
+}
+
+.CurrentPart,
+.NextPart {
+  background-color: var(--tlo-kolor);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  border-radius: 5px;
+}
+.CurrentPart > div,
+.NextPart > div {
+  background-color: var(--niebieski);
+  width: var(--width-max);
+  height: 30vh;
+  margin-top: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.NextPart > div {
+  background-color: var(--zielony);
+}
+
+.CurrentPart > div > span,
+.NextPart > div > span {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.CurrentPart > div > div,
+.NextPart > div > div {
+  background-color: var(--ciemny-niebieski);
+  width: 90%;
+  min-height: 60%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 17px;
+  word-break: break-all;
+  padding: 5px;
+  text-align: center;
+}
+.NextPart > div > div {
+  background-color: var(--ciemny-zielony);
+}
+.test > span.days {
+  margin-right: 5px;
+}
+footer {
+  margin: 0 auto 0 auto;
+  width: 85%;
+  max-width: 2000px;
+  height: 5vh;
+  color: white;
+  background-color: var(--tlo-kolor);
+  text-align: center;
+  line-height: 5vh;
+}
+
+.progress-bar {
+  position: relative;
+  width: 100%;
+  height: 3em;
+  background-color: black;
+  border-radius: 1.5em;
+  color: white;
+}
+
+.fill-bar {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  bottom: 0.5em;
+  /* min-width: 2rem; */
+  max-width: calc(100% - 1em);
+  background-color: yellowgreen;
+  border-radius: 1em;
+  /* padding: 1em; */
+  width: 0%;
+}
+.value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: arial;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.planContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.507);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.planContainer > a > i {
+  font-size: 4em;
+  text-align: center;
+  color: white;
+}
+.planContainer:hover {
+  background-color: var(--ciemny-zielony);
+  border-radius: 50%;
+}
+
+@media (min-width: 1000px) {
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100%;
+    background-image: url(backgournd.jpg);
+  }
+
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-top: 10px;
+    transform: translateX(-50%);
+    font-size: 60px;
+  }
+
+  .CurrentPart,
+  .NextPart {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 45%;
+    height: 85vh;
+    flex-wrap: wrap;
+    margin-top: 6vh;
+    padding: 20px;
+  }
+
+  .CurrentPart > div,
+  .NextPart > div {
+    background-color: var(--niebieski);
+    width: var(--width--min);
+    height: 15vh;
+    margin-top: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .NextPart > div {
+    background-color: var(--zielony);
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4vh;
+    line-height: 4vh;
+    width: 100%;
+  }
+
+  .planContainer {
+    position: absolute;
+    top: 2%;
+    left: 80%;
+    transform: translateX(-50%);
+  }
+
+  .planContainer > a > i {
+    font-size: 4em;
+    text-align: center;
+    color: white;
+  }
+}
